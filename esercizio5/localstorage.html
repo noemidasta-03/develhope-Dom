@@ -43,7 +43,28 @@
     <button class="btn">Salva</button>
     <p class="printedform"></p>
     <script>
-      //....
+      const email = document.querySelector(".email");
+      const firstName = document.querySelector(".firstname");
+      const lastName = document.querySelector(".lastname");
+
+      const btn = document.querySelector(".btn");
+
+      btn.addEventListener("click", () => {
+        localStorage.setItem("email", email.value);
+        localStorage.setItem("firstname", firstName.value);
+        localStorage.setItem("lastname", lastName.value);
+
+        titleName.innerText = localStorage.getItem("firstname");
+      });
+
+      const titleName = document.querySelector(".title-name");
+
+      titleName.innerText = localStorage.getItem("firstname");
     </script>
   </body>
 </html>
+
+<!-- 
+Lo scope di questo task è di salvare tutti i dati di un form nel local storage. 
+-Fai in modo che nello span venga inserito il testo che si è inserito nell'input nome 
+-Fai in modo che questi dati si salvino nel local storage -Controlla che al reload il nome nel titolo non scompaia -->
